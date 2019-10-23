@@ -1,11 +1,20 @@
-<div>
+<div class="body-pruple">
 
-  <input type="text" [(ngModel)]="task">
 
-  <div *ngFor="let task_ of tasks">
-    <span>{{ task_.Description}}</span>
-    <div>
-      <input type="checkbox" [value]="task_.isComplete">
+  <div class="todo-input-section">
+    <h1>Tareas por hacer</h1>
+    <input type="text" [(ngModel)]="task">
+    <button (click)="addTask()">Agregar</button>
+  </div>
+
+  <div>
+    <div class="todo-card">
+      <div *ngFor="let task_ of tasks">
+        <span>{{ task_.Description}}</span>
+        <div>
+          <input type="checkbox" [value]="task_.isComplete">
+        </div>
+      </div>
     </div>
   </div>
 

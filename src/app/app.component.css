@@ -1,0 +1,14 @@
+.body-pruple {
+  background-color: #646CEB;
+  height: 100vh;;
+  width: 100%;
+}
+
+.todo-input-section {
+  display: flex;
+  justify-content: center;
+}
+.todo-card {
+  background-color: white;
+  width: 20%;
+}

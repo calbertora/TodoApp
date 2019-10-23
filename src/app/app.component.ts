@@ -19,7 +19,30 @@ export class AppComponent {
   getTask() {
     this.todoService.getTasks().subscribe(response => this.tasks = response);
   }
-  setTask() {
 
+  addTask() {
+
+
+    if (this.task) {
+
+      const date = new Date();
+
+      const taskToAdd = {
+        Description: this.task,
+        CreationDate: date.toJSON(),
+        isComplete: false
+      };
+
+      this.todoService.putTask(taskToAdd)
+        .subscribe(
+          response => {
+            console.log(response);
+            this.getTask();
+            this.task = '';
+          }, error => {
+            console.log(error);
+          }
+        );
+    }
   }
 }

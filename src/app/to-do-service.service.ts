@@ -13,4 +13,9 @@ export class ToDoServiceService {
     const url = `${environment.endpoint}Task`;
     return this.httpClient.get(url);
   }
+
+  putTask(task: any) {
+    const url = `${environment.endpoint}Task`;
+    return this.httpClient.post(url, task);
+  }
 }
